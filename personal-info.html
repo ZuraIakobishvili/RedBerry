@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/personal-info.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="main-container">
+    <div class="left-container">
+        <!-- Header div -->
+            <div class="left-header">
+                <div>
+                    <a href="index.html">
+                        <img class="back-btn" src="images/back.svg" alt="back-button">
+                    </a>
+                    <h3>პირადი ინფო</h3>
+                    <p> 1/3 </p>
+                </div>
+                <div class="left-underline"></div>
+            </div>
+        <!-- Name , Last Name div  -->
+        <div class="full-name">
+            <div class="first-name">
+                <label for="firstName">სახელი</label>
+                <input type="text" id="firstName" placeholder="ანზორ">
+                <p>მინიუმ 2 ასო,ქართული ასოები</p>
+            </div>
+                <div class="last-name">
+                    <label for="lastName">გვარი</label>
+                    <input type="text" id="lastName" placeholder="მუმლაძე">
+                    <p>მინიუმ 2 ასო,ქართული ასოები</p>
+                </div>
+        </div>
+    
+        <!-- File input  -->
+        <div class="left-photo-uploader">
+            <p>პირადი ფოტოს ატვირთვა</p>
+            <label for="photoUpload">
+            <input type="file" id="photoUpload">
+            ატვირთვა
+            </label>
+        </div>
+
+        <!-- Text area -->
+
+        <div class="left-textarea">
+            <p>ჩემ შესახებ(არასავალდებულოა)</p>
+            <textarea placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
+        </div>
+
+        <!-- Email && Mobile -->
+        <div class="left-email">
+            <p>ელ.ფოსტა</p>
+            <input type="email" id="email" placeholder="gldanelianzori@redberry.ge">
+            <p>უნდა მთავრდებოდეს @redberry.ge-ით </p>
+        </div>
+
+        <div class="left-phone">
+            <p>მობილურის ნომერი</p>
+            <input type="text" id="phone" placeholder="+995 551 12 34 56">
+            <p>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს </p>
+        </div>
+
+        <button class="submit" type="submit"><span>ᲨᲔᲛᲓᲔᲒᲘ</span></button>
+    
+    </div>
+    <div class="right-container"></div>
+</div>
+    
+</body>
+</html>

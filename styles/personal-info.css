@@ -1,0 +1,218 @@
+.main-container {
+    display: flex;
+}
+
+.left-container {
+    margin-top: 47px;
+    width: 1098px;
+}
+
+/* Left header styles */
+
+.left-header :nth-child(1) {
+    display:flex;
+    align-items: center;
+}
+
+.left-header h3 {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.left-header img {
+    margin-left: 62px;
+    height: 16px;
+    width: 9.2px;
+    margin-right: 77px;
+}
+
+.left-header p {
+    margin-left: 620px;
+    font-size: 20px;
+}
+
+.left-underline {
+    width: 798px;
+    height: 1px;
+    background-color: black;
+    margin-top: 12px;
+    margin-left: 150px;
+}
+
+/* Full name styles  */
+
+.full-name {
+    margin-left: 150px;
+    margin-top: 77px;
+    display:flex;
+}
+
+.first-name ,.last-name {
+    display:flex;
+    flex-direction: column;
+    height: 48px;
+    width: 371px;
+    border-radius: 4px;
+    gap:10px;
+}
+
+.first-name {
+    margin-right: 53px;
+}
+
+.full-name div label {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.full-name div input {
+    width: 371px;
+    line-height: 48px;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+}
+
+.full-name div input::placeholder {
+    padding-left: 16px;
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+.full-name div p {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    color: #2E2E2E;
+}
+
+/* Photo uploader styles */
+.left-photo-uploader {
+    margin-top: 108px;
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.left-photo-uploader input[type='file'] {
+    display:none;   
+}
+
+.left-photo-uploader label {
+    background-color: #0E80BF;
+    border-radius: 4px;
+    padding: 10px 25px 10px 25px;    
+    color: white;
+    font-weight: bold;
+    
+}
+
+.left-photo-uploader p {
+    width: 232px;
+    height: 22px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/* Left container textarea styles */
+
+.left-textarea {
+    margin-top: 54px;
+    margin-left: 150px;
+}
+
+.left-textarea p {
+    width: 798px;
+    height: 21px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+
+.left-textarea textarea::placeholder {
+    padding-left:16px;
+    padding-top:13px;
+    
+}
+
+.left-textarea textarea {
+    resize: none;
+    width: 798px;
+    height: 103px;
+    background: #FFFFFF;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+    margin-top: 8px;
+
+}
+
+/* Left container email styles && phone styles */
+
+.left-email , .left-phone{
+    margin-left: 150px;
+    margin-top: 33px;
+}
+.left-email :nth-child(1) ,.left-phone :nth-child(1) {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.left-email input ,.left-phone input {
+    width: 798px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.left-email input::placeholder , .left-phone input::placeholder {
+    padding-left:16px;
+}
+
+.left-email:last-child , .left-phone:last-child  {
+    width: 798px;
+    height: 21px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* Submit Button */
+
+.submit {
+    background: #6B40E3;
+    border-radius: 4px;
+    color:white;
+    width: 151px;
+    height: 48px;
+    margin-top: 174px;
+    margin-bottom: 65px;
+    border: none;
+    margin-left: 797px ;
+    cursor: pointer;
+}
+
+.submit span {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
