@@ -23,10 +23,12 @@
                 <div class="left-underline"></div>
             </div>
         <!-- Name , Last Name div  -->
+        <form>
         <div class="full-name">
-            <div class="first-name">
+            <div class="first-name" id="firstNameParent">
                 <label for="firstName">სახელი</label>
-                <input type="text" id="firstName" placeholder="ანზორ">
+                <input type="text" id="firstName" placeholder="ანზორ" >
+                <img src="" id="firstNameIcon">
                 <p>მინიუმ 2 ასო,ქართული ასოები</p>
             </div>
                 <div class="last-name">
@@ -49,7 +51,7 @@
 
         <div class="left-textarea">
             <p>ჩემ შესახებ(არასავალდებულოა)</p>
-            <textarea placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
+            <textarea placeholder="ზოგადი ინფო შენ შესახებ" id="textarea"></textarea>
         </div>
 
         <!-- Email && Mobile -->
@@ -61,15 +63,38 @@
 
         <div class="left-phone">
             <p>მობილურის ნომერი</p>
-            <input type="text" id="phone" placeholder="+995 551 12 34 56">
+            <input type="text" id="phoneNumber" placeholder="+995 551 12 34 56">
             <p>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს </p>
         </div>
 
         <button class="submit" type="submit"><span>ᲨᲔᲛᲓᲔᲒᲘ</span></button>
+    </form>
     
     </div>
-    <div class="right-container"></div>
+    <!-- Right container -->
+    <div class="right-container">
+        <div class="display-value">
+            <div class="full-name-value">
+                <div class="first-name-value" id="firstNameValue"></div>
+                <div class="last-name-value" id="lastNameValue"></div>
+            </div>
+            <div class="right-email">
+                <img src="images/email-icon.png" alt="email-icon">
+                <div class="email-value" id="emailValue"></div>
+            </div>
+            <div class="right-phone">
+                <img src="images/phone-icon.png">
+                <div class="phone-number-value" id="phoneNumberValue"></div>
+            </div>
+            <div class="about-me">ჩემ შესახებ</div>
+            <div class="about-me-value" id="aboutMe"></div>
+        </div>
+    </div>
 </div>
+
+        
     
+<script src="scripts/info.js"></script>
 </body>
 </html>
+
