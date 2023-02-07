@@ -58,6 +58,11 @@
     width: 371px;
     border-radius: 4px;
     gap:10px;
+
+}
+
+#firstName:focus , #lastName , #textarea , #email , #phoneNumber{
+    outline: none;
 }
 
 .first-name {
@@ -222,6 +227,7 @@
 
 .right-container{
     margin-left: 80px;
+    display: flex;
 }
 
 .display-value {
@@ -315,3 +321,19 @@
    
 }
 
+.show-photo {
+    width: 246px;
+    height: 246px;
+    background-size:contain;
+    background-position: center;
+    background-position: center;
+    
+}
+
+.success {
+    background-color:red ;
+}
+
+#photoValue {
+    font-size: 30px;
+}
