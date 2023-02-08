@@ -5,9 +5,7 @@
 .left-container {
     margin-top: 47px;
     width: 1098px;
-    background-color: #f3f3f3;
 }
-
 /* Left header styles */
 
 .left-header :nth-child(1) {
@@ -299,40 +297,40 @@
 }
 
 .danger-icon {
-    height: 18px;
+    height: 20px;
     width: 20px;
-    left: 1.5px;
-    top: 2px;
-    border-radius: 0px;
+    border-radius: 50%;
     position: absolute;
     top: 210px;
     left: 530px;
-}
-
-.success-icon { 
-    height: 16.5px;
-    width: 16.5px;
-    left: 0.75px;
-    top: 0.75px;
-    border-radius: 0px;
-    position: absolute;
-    top: 210px;
-    left: 492px;
-   
-}
-
-.show-photo {
-    width: 246px;
-    height: 246px;
-    background-size:contain;
-    background-position: center;
-    background-position: center;
+    text-align: center;
+    color:red;
+    font-size:20px;
     
 }
 
-.success {
-    background-color:red ;
+.success-icon { 
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 210px;
+    left: 492px;
+    color:white;
+    background-color: #98E37E;
+    text-align: center;
+    
+    
 }
+
+
+.show-photo img {
+    width: 246px;
+    height: 246px;
+    margin-top: 48px;
+    border-radius: 50%;
+}
+
 
 #photoValue {
     font-size: 30px;
