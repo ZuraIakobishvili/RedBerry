@@ -1,0 +1,196 @@
+/* Left container */
+
+#page-num {
+    margin-left: 576px;
+}
+
+.exp-dates {
+    margin-top:31px;
+    margin-left: 150px;
+    display: flex;
+}
+
+.exp-dates div {
+    width: 371px;
+}
+
+.exp-dates :nth-child(1) {
+    margin-right: 56px;
+    display: flex;
+    flex-direction: column;
+}
+
+.start-date :first-child , .finish-date :first-child {
+    height: 21px; 
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.exp-dates input {
+    box-sizing: border-box;
+    width: 371px;
+    height: 48px;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+    margin-bottom: 47px;
+}
+
+.exp-dates input {
+    padding-left: 16px;
+    padding-right: 16px;
+    color: #00000099;
+}
+
+.left-position , .left-employer{
+    margin-left: 150px;
+    margin-top: 33px;
+}
+.left-position :nth-child(1) ,.left-employer :nth-child(1) {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.left-position input ,.left-employer input {
+    width: 798px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.left-position input::placeholder , .left-employer input::placeholder {
+    padding-left:16px;
+}
+
+.left-position:last-child , .left-employer:last-child  {
+    width: 798px;
+    height: 21px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* Description styles */
+
+.description {
+    margin-left: 150px;
+}
+
+.description p {
+    width: 798px;
+    height: 21px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+
+.description textarea::placeholder {
+    padding-left:16px;
+    padding-top:13px;
+    
+}
+
+.description textarea {
+    resize: none;
+    width: 798px;
+    height: 103px;
+    background: #FFFFFF;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+input:focus , textarea:focus {
+    outline: none;
+}
+
+.bottom-line {
+    width: 798px;
+    height: 1px;
+    background-color: #C1C1C1;
+    margin-top: 58px;
+    margin-left: 150px;
+}
+
+.add-button {
+    margin-left:150px;
+    margin-top: 45px;
+    color: white;
+    background-color: #62A1EB;
+    width: 289px;
+    height: 48px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 115px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.back-next {
+    margin-left: 150px;
+    margin-bottom:65px;
+}
+
+.back-next :first-child , .back-next :last-child{   
+    width: 113px;
+    height: 48px;
+    color:white;
+    background: #6B40E3;
+    border-radius: 4px;
+    cursor:pointer;
+    border: none;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.back-next :first-child{
+    margin-right: 570px;
+}
+
+.exp-underline {
+    width: 662px;
+    height: 1px;
+    background-color: #C8C8C8;
+    
+}
+
+.experience-header {
+    width: 143px;
+    height: 22px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: #F93B1D;
+    margin-top: 14px;
+}
+
+.position-employer {
+    display:flex;
+    margin-top: 15px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px
+}
+
+.position-employer :first-child {
+    margin-right: 7px;
+}

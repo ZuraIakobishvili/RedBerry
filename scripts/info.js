@@ -13,6 +13,7 @@ const aboutMe = document.getElementById('aboutMe');
 const photoValue = document.getElementById('photoValue');
 
 
+
 // Save data to localStorage and display it in input field
 
 function insertData (inputName, insertPlaceName, storageName) {   
@@ -29,6 +30,8 @@ insertData(lastName,lastNameValue,'lastname');
 insertData(email,emailValue,'email');
 insertData(phoneNumber,phoneNumberValue,'phone');
 insertData(textarea,aboutMe,'aboutme');
+
+
 
 
 // Image upload 

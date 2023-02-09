@@ -10,6 +10,88 @@
     <title>Document</title>
 </head>
 <body>
-    xxx
+    <div class="main-container">
+        <div class="left-container">
+            <div class="left-header">
+                <div>
+                    <a href="index.html">
+                        <img class="back-btn" src="images/back.svg"     alt="back-button">
+                    </a>
+                    <h3>ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</h3>
+                    <p id="page-num"> 2/3 </p>
+                </div>
+                <div class="left-underline"></div>
+            </div>
+            <!-- Position && Employer -->
+            <div class="left-position">
+                <p>თანამდებობა</p>
+                <input type="text" id="position" placeholder="დეველოპერი, დიზაინერი, ა.შ.    ">
+                <p>მინიმუმ 2 სიმბოლო </p>
+            </div>
+            <div class="left-employer">
+                <p>დამსაქმებელი</p>
+                <input type="text" id="employer" placeholder="დამსაქმებელი">
+                <p>მინიმუმ 2 სიმბოლო</p>
+            </div>
+                <!-- dates -->
+            <div class="exp-dates">
+                <div class="start-date" id="">
+                    <label for="start-date">დაწყების რიცხვი</label>
+                    <input type="date" id="start-date" >
+                </div>
+
+                    <div class="finish-date">
+                        <label for="finish-date">დამთავრების რიცხვი</label>
+                        <input type="date" id="finish-date" >
+                    </div>
+            </div>
+            <!-- Description -->
+            <div class="description">
+                <p>აღწერა</p>
+                <textarea placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"     id="description"></textarea>
+            </div>
+            <div class="bottom-line"></div>
+            <button class="add-button" type="button">მეტი გამოცდილების დამატება</button>
+            <div class="back-next">
+                <button  type="button">ᲣᲙᲐᲜ</button>
+                <button type="button">ᲨᲔᲛᲓᲔᲒᲘ</button>
+            </div>
+        </div>
+
+            <!-- Right container -->
+    <div class="right-container" id="right-container">
+        <div class="display-value">
+            <div class="full-name-value">
+                <div class="first-name-value" id="firstNameValue"></div>
+                <div class="last-name-value" id="lastNameValue"></div>
+            </div>
+            <div class="right-email">
+                <img src="images/email-icon.png" alt="email-icon">
+                <div class="email-value" id="emailValue"></div>
+            </div>
+            <div class="right-phone">
+                <img src="images/phone-icon.png">
+                <div class="phone-number-value" id="phoneNumberValue"></div>
+            </div>
+            <div class="about-me">ჩემ შესახებ</div>
+            <div class="about-me-value" id="aboutMe"></div>
+            <div class="exp-underline"></div>
+            <h3 class="experience-header" id="experience-header">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</h3>
+            <div class="experience">
+                <div class="position-employer">
+                    <div class="experience-position" id="experience-position"></div>
+                    <div class="experience-employer" id="experience-employer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="show-photo" id="photoValue"></div>
+    </div>
+</div>
+<script src="scripts/experience.js"></script>
 </body>
 </html>
+
+            
+
+
+    
