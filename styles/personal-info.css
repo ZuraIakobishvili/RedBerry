@@ -204,7 +204,6 @@
 .submit {
     background: #6B40E3;
     border-radius: 4px;
-    color:white;
     width: 151px;
     height: 48px;
     margin-top: 174px;
@@ -212,13 +211,17 @@
     border: none;
     margin-left: 797px ;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.submit span {
+.submit a {
     font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
+    color: white;
 }
 
 /* Right container */
