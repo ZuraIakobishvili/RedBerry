@@ -295,37 +295,26 @@
     font-size: 16px
 }
 
-.danger-icon-hidden{
-    display:none;
-}
-
-.danger-icon {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    position: absolute;
+.first-name-success-icon  {
+    width:16.5px ;
+    height: 16.5px;
+    position:absolute;
+    left: 490px;
     top: 210px;
-    left: 530px;
-    text-align: center;
-    color:red;
-    font-size:20px;
-    
+
 }
 
-.success-icon { 
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    position: absolute;
+.first-name-danger-icon  {
+    width:16.5px ;
+    height: 16.5px;
+    position:absolute;
+    left: 528px;
     top: 210px;
-    left: 492px;
-    color:white;
-    background-color: #98E37E;
-    text-align: center;
-    
-    
 }
 
+.first-name-hidden-icon {
+    visibility: hidden;
+}
 
 .show-photo img {
     width: 246px;
@@ -337,4 +326,8 @@
 
 #photoValue {
     font-size: 30px;
+}
+
+#first-name-error{
+    margin-bottom: 450px;
 }
