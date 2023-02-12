@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/personal-info.css">
     <link rel="stylesheet" href="styles/experience.css">
-    <title>Experience</title>
+    <link rel="stylesheet" href="styles/education.css">
+    <title>Education</title>
 </head>
 <body>
+
     <div class="main-container">
         <div class="left-container" id="left-container">
             <div class="left-header">
@@ -17,28 +19,35 @@
                     <a href="index.html">
                         <img id="back-btn" class="back-btn" src="images/back.svg"     alt="back-button">
                     </a>
-                    <h3>ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</h3>
-                    <p id="page-num"> 2/3 </p>
+                    <h3>ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</h3>
+                    <p id="page-num"> 3/3 </p>
                 </div>
                 <div class="left-underline"></div>
             </div>
             <!-- Position && Employer -->
+            <form>
             <div id="experience-parent">
             <div class="left-position">
-                <p>თანამდებობა</p>
-                <input type="text" id="position" placeholder="დეველოპერი, დიზაინერი, ა.შ.    ">
+                <p>სასწავლებელი</p>
+                <input type="text" id="academy" placeholder="სასწავლებელი">
                 <p>მინიმუმ 2 სიმბოლო </p>
-            </div>
-            <div class="left-employer">
-                <p>დამსაქმებელი</p>
-                <input type="text" id="employer" placeholder="დამსაქმებელი">
-                <p>მინიმუმ 2 სიმბოლო</p>
             </div>
                 <!-- dates -->
             <div class="exp-dates">
                 <div class="start-date" id="">
-                    <label for="start-date">დაწყების რიცხვი</label>
-                    <input type="date" id="start-date" >
+                    <label for="start-date">ხარისხი</label>
+                    <select required class="education-select" id="degree">
+                        <option hidden  value="">აირჩიეთ ხარისხი</option>
+                        <option value="საშუალო სკოლის დიპლომი">საშუალო სკოლის დიპლომი</option>
+                        <option value="ზოგადსაგანმანათლებლო დიპლომი">ზოგადსაგანმანათლებლო დიპლომი</option>
+                        <option value="ბაკალავრი">ბაკალავრი</option>
+                        <option value="მაგისტრი">მაგისტრი</option>
+                        <option value="დოქტორი">დოქტორი</option>
+                        <option value="ასოცირებული ხარისხი">ასოცირებული ხარისხი</option>
+                        <option value="სტუდენტი">სტუდენტი</option>
+                        <option value="კოლეჯი (ხარისხის გარეშე)">კოლეჯი (ხარისხის გარეშე)</option>
+                        <option value="სხვა">სხვა</option>
+                    </select>
                 </div>
 
                     <div class="finish-date">
@@ -49,24 +58,26 @@
             <!-- Description -->
             <div class="description">
                 <p>აღწერა</p>
-                <textarea placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"     id="description"></textarea>
+                <textarea placeholder="განათლების აღწერა"     id="description"></textarea>
             </div>
             <div class="bottom-line"></div>
         </div>
 
-            <button class="add-button" id="add-button" type="button">მეტი გამოცდილების დამატება</button>
+            <button class="add-button" id="add-button" type="button">მეტი სასწავლებლის დამატება</button>
             <div class="back-next">
                 <div>
-                    <a href="personal-info.html">ᲣᲙᲐᲜ</a>
+                    <a href="experience.html">ᲣᲙᲐᲜ</a>
                 </div>
                 <div>
-                    <a href="education.html">ᲨᲔᲛᲓᲔᲒᲘ</a>
+                    <a href="education.html">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</a>
                 </div>
 
             </div>
         </div>
+    </form>
 
             <!-- Right container -->
+            <!-- Personal info -->
     <div class="right-container" id="right-container">
         <div class="display-value">
             <div class="full-name-value">
@@ -83,6 +94,7 @@
             </div>
             <div class="about-me">ჩემ შესახებ</div>
             <div class="about-me-value" id="aboutMe"></div>
+            <!-- experience -->
             <div class="exp-underline"></div>
             <h3 class="experience-header" id="experience-header">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</h3>
             <div class="experience">
@@ -96,15 +108,28 @@
                 </div>
                 <div class="experience-description" id="experience-description"></div>
             </div>
+            <!-- Education -->
+            <div class="education-underline"></div>
+            <h3 class="education-header" id="education-header">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</h3>
+            <div class="experience">
+                <div class="education">
+                    <div class="education-collage" id="education-collage"></div>
+                    <div class="education-degree" id="education-degree"></div>
+                </div>
+                <div class="finish-date">
+                    <div class="education-finish-date" id="education-finish-date"></div>
+                </div>
+                <div class="education-description" id="education-description"></div>
+            </div>
         </div>
         <div class="show-photo" id="photoValue"></div>
     </div>
 </div>
-<script src="scripts/experience.js"></script>
+                
+        
+           
+    
+
+    <script src="scripts/education.js"></script>
 </body>
 </html>
-
-            
-
-
-    

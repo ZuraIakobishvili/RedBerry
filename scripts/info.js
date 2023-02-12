@@ -34,7 +34,7 @@ insertData(textarea,aboutMe,'aboutme');
 
 
 
-// Image upload 
+//Image upload 
 
 const uploadImage = document.getElementById('photoUpload');
 
@@ -97,26 +97,26 @@ firstName.addEventListener("input", function () {
   if (firstName.value.match(pattern) && firstName.value.length > 2) {
     firstName.setAttribute("style", "border: 1px solid #98E37E;");
     localStorage.setItem("firstNameStyle","border: 1px solid #98E37E;");
-    localStorage.setItem('firstNameError', 'Your first name is correct')
+    localStorage.setItem('firstNameError', 'Your first name is correct');
     localStorage.setItem("firstNameErrorStyles","color:#98E37E;");
-    firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError')
-    firstNameErrorMsg.setAttribute('style', localStorage.getItem("firstNameErrorStyles"))
-    localStorage.setItem('icon-src', 'images/success-icon.svg');
+    firstNameErrorMsg.setAttribute('style', localStorage.getItem("firstNameErrorStyles"));
     localStorage.setItem('iconStyles', 'first-name-success-icon');
-    firstNameIcon.classList.add(localStorage.getItem('iconStyles'))
-    firstNameIcon.src = localStorage.getItem('icon-src')
+    localStorage.setItem('icon-src', 'images/success-icon.svg');
+    firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError');
+    firstNameIcon.classList.add(localStorage.getItem('iconStyles'));
+    firstNameIcon.src = localStorage.getItem('icon-src');
 
   } else {
     firstName.setAttribute("style", "border: 1px solid #EF5050;");
     localStorage.setItem("firstNameStyle","border: 1px solid #EF5050;");
     localStorage.setItem("firstNameError","Enter correct info");
     localStorage.setItem("firstNameErrorStyles","color:#EF5050;");
-    firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError');
-    firstNameErrorMsg.setAttribute('style', localStorage.getItem("firstNameErrorStyles"));
     localStorage.setItem('icon-src', 'images/danger-icon.svg');
     localStorage.setItem('iconStyles', 'first-name-danger-icon');
+    firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError');
+    firstNameErrorMsg.setAttribute('style', localStorage.getItem("firstNameErrorStyles"));
     firstNameIcon.classList.add(localStorage.getItem('iconStyles'))
-    firstNameIcon.src = localStorage.getItem('icon-src')
+    firstNameIcon.src = localStorage.getItem('icon-src');
     
   }
 
@@ -124,24 +124,32 @@ firstName.addEventListener("input", function () {
         firstName.setAttribute("style", "border: 1px solid #BCBCBC;");
         localStorage.setItem("firstNameStyle","border: 1px solid #BCBCBC;");
         localStorage.setItem('firstNameError', 'მინიუმ 2 ასო,ქართული ასოები');
-        localStorage.setItem("firstNameErrorStyles","color:#BCBCBC;");
-        firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError')
-        firstNameErrorMsg.setAttribute('style',localStorage.getItem('firstNameErrorStyles'));
+        localStorage.setItem("firstNameErrorStyles","color:#BCBCBC;position:relative;bottom:323px");
         localStorage.setItem('iconStyles', 'first-name-hidden-icon');
-        firstNameIcon.classList.add(localStorage.getItem('iconStyles'))
+        firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError');
+        firstNameErrorMsg.setAttribute('style',localStorage.getItem('firstNameErrorStyles'));
+        firstNameIcon.classList.add(localStorage.getItem('iconStyles'));
     }
 
 });
 //Last Name Validation
-const lastNameErrorMsg = document.getElementById('last-name-error')
+const lastNameErrorMsg = document.getElementById('last-name-error');
+const lastNameIcon = document.getElementById('last-name-icon')
+
 if (localStorage.getItem("lastNameStyles")) {
     lastName.setAttribute("style", localStorage.getItem("lastNameStyles"));
   }
 if(localStorage.getItem('lastNameErrorMsg')) {
-    lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg')
+    lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg');
   }
 if(localStorage.getItem('lastNameErrorStyles')) {
-  lastNameErrorMsg.setAttribute('style', localStorage.getItem('lastNameErrorStyles'))
+  lastNameErrorMsg.setAttribute('style', localStorage.getItem('lastNameErrorStyles'));
+}
+if(localStorage.getItem('lastname-src')) {
+  lastNameIcon.src = localStorage.getItem('lastname-src');
+}
+if(localStorage.getItem('lastNameIconStyles')) {
+  lastNameIcon.classList.add(localStorage.getItem('lastNameIconStyles'));
 }
 
 
@@ -150,26 +158,39 @@ lastName.addEventListener("input", function () {
       lastName.setAttribute("style", "border: 1px solid #98E37E;");
       localStorage.setItem("lastNameStyles","border: 1px solid #98E37E;");
       localStorage.setItem('lastNameErrorMsg', 'Your last name is correct');
-      localStorage.setItem('lastNameErrorStyles','color:#98E37E;');
+      localStorage.setItem('lastNameErrorStyles','color:#98E37E;position:relative;bottom:20px;');
+      localStorage.setItem('lastname-src', 'images/success-icon.svg')
+      localStorage.setItem('lastNameIconStyles', 'last-name-success-icon');
       lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg');
-      lastNameErrorMsg.setAttribute('style', localStorage.getItem('lastNameErrorStyles'));       
+      lastNameErrorMsg.setAttribute('style', localStorage.getItem('lastNameErrorStyles'));   
+      lastNameIcon.classList.add(localStorage.getItem('lastNameIconStyles'));
+      lastNameIcon.src = localStorage.getItem('lastname-src');
+      
+      
+     
 
     } else {
         lastName.setAttribute("style", "border: 1px solid #EF5050;");
         localStorage.setItem("lastNameStyles","border: 1px solid #EF5050;");
         localStorage.setItem("lastNameErrorMsg","Enter correct info");
-        localStorage.setItem("lastNameErrorStyles","color:#EF5050;");
+        localStorage.setItem("lastNameErrorStyles","color:#EF5050;position:relative;bottom:15px");
+        localStorage.setItem('lastname-src', 'images/danger-icon.svg');
+        localStorage.setItem('lastNameIconStyles', 'last-name-danger-icon');
         lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg')
-        lastNameErrorMsg.setAttribute('style', localStorage.getItem("lastNameErrorStyles"))
+        lastNameErrorMsg.setAttribute('style', localStorage.getItem("lastNameErrorStyles"));
+        lastNameIcon.classList.add(localStorage.getItem('lastNameIconStyles'));
+        lastNameIcon.src = localStorage.getItem('lastname-src');
     }
   
     if(lastName.value.length == 0) {
         lastName.setAttribute("style", "border: 1px solid #BCBCBC;");
         localStorage.setItem("lastNameStyles","border: 1px solid #BCBCBC;");
         localStorage.setItem('lastNameErrorMsg', 'მინიუმ 2 ასო,ქართული ასოები');
-        localStorage.setItem('lastNameErrorStyles', 'color:#2E2E2E')
-        lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg')
-        lastNameErrorMsg.setAttribute('style', localStorage.getItem('lastNameErrorStyles'))
+        localStorage.setItem('lastNameErrorStyles', 'color:#2E2E2E;position:relative;bottom:330px;');
+        lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg');
+        lastNameErrorMsg.setAttribute('style', localStorage.getItem('lastNameErrorStyles'));
+        localStorage.setItem('lastNameIconStyles', 'last-name-icon-hidden');
+        lastNameErrorMsg.classList.add(localStorage.getItem('lastNameIconStyles'));
       }
   });
 
@@ -177,6 +198,7 @@ lastName.addEventListener("input", function () {
   //Email Validation
   const emailPattern = /^[A-Za-z0-9._%+-]+@redberry.ge$/ ;
   const emailErrorMsg = document.getElementById('email-error')
+  const emailIcon = document.getElementById('email-icon')
 
 if (localStorage.getItem("emailStyles")) {
     email.setAttribute("style", localStorage.getItem("emailStyles"));
@@ -187,6 +209,13 @@ if(localStorage.getItem('emailErrorMsg')) {
 if(localStorage.getItem('emailErrorStyles')) {
   emailErrorMsg.setAttribute('style', localStorage.getItem('emailErrorStyles'))
   }
+if(localStorage.getItem('emailIconSrc')) {
+  emailIcon.src = localStorage.getItem('emailIconSrc')
+}
+if(localStorage.getItem('emailIconStyles')){
+  emailIcon.classList.add(localStorage.getItem('emailIconStyles'))
+}
+
 email.addEventListener("input", function () {
     if (email.value.match(emailPattern) && email.value.length !== 0) {
       email.setAttribute("style", "border: 1px solid #98E37E;");
@@ -195,6 +224,11 @@ email.addEventListener("input", function () {
       localStorage.setItem('emailErrorStyles', 'color:#98E37E')
       emailErrorMsg.innerHTML = localStorage.getItem('emailErrorMsg');
       emailErrorMsg.setAttribute('style', localStorage.getItem('emailErrorStyles'));
+      localStorage.setItem('emailIconSrc', 'images/success-icon.svg')
+      emailIcon.src = localStorage.getItem('emailIconSrc')
+      localStorage.setItem('emailIconStyles', 'email-icon-success')
+      emailIcon.classList.add(localStorage.getItem('emailIconStyles'))
+      
       
 
     } else {
@@ -204,6 +238,11 @@ email.addEventListener("input", function () {
         localStorage.setItem('emailErrorStyles', 'color:#EF5050' );
         emailErrorMsg.innerHTML = localStorage.getItem('emailErrorMsg');
         emailErrorMsg.setAttribute('style', localStorage.getItem('emailErrorStyles'));
+        localStorage.setItem('emailIconSrc', 'images/danger-icon.svg');
+        emailIcon.src = localStorage.getItem('emailIconSrc');
+        localStorage.setItem('emailIconStyles', 'email-danger-icon');
+        emailIcon.classList.add(localStorage.getItem('emailIconStyles'))
+
     }
   
     if(email.value.length == 0) {
@@ -219,7 +258,7 @@ email.addEventListener("input", function () {
   //Phone number validation
   const geoNumberPattern = /^\+995\d{9}$/
   const phoneErrorMsg = document.getElementById('phone-error')
-
+  const phoneIcon = document.getElementById('phone-icon')
   if (localStorage.getItem("phoneStyles")) {
     phoneNumber.setAttribute("style", localStorage.getItem("phoneStyles"));
   }
@@ -228,6 +267,12 @@ email.addEventListener("input", function () {
   }
   if(localStorage.getItem('phoneErrorStyles')) {
     phoneErrorMsg.setAttribute('style', localStorage.getItem('phoneErrorStyles'))
+  }
+  if(localStorage.getItem('phoneIconSrc')) {
+    phoneIcon.src = localStorage.getItem('phoneIconSrc')
+  }
+  if(localStorage.getItem('phoneIconStyles')) {
+    phoneIcon.classList.add(localStorage.getItem('phoneIconStyles'))
   }
 
   phoneNumber.addEventListener("input", function () {
@@ -238,6 +283,10 @@ email.addEventListener("input", function () {
       localStorage.setItem('phoneErrorStyles', 'color:#98E37E');
       phoneErrorMsg.innerHTML = localStorage.getItem('phoneErrorMsg');
       phoneErrorMsg.setAttribute('style', localStorage.getItem('phoneErrorStyles'));
+      localStorage.setItem('phoneIconSrc', 'images/success-icon.svg');
+      phoneIcon.src = localStorage.getItem('phoneIconSrc');
+      localStorage.setItem('phoneIconStyles', 'phone-icon-success');
+      phoneIcon.classList.add(localStorage.getItem('phoneIconStyles'));
       
     } else {
         phoneNumber.setAttribute("style", "border: 1px solid #EF5050;");
@@ -245,7 +294,11 @@ email.addEventListener("input", function () {
         localStorage.setItem('phoneErrorMsg', 'Enter correct phone number');
         localStorage.setItem('phoneErrorStyles', 'color:#EF5050');
         phoneErrorMsg.innerHTML = localStorage.getItem('phoneErrorMsg');
-        phoneErrorMsg.setAttribute('style', localStorage.getItem('phoneErrorStyles'))
+        phoneErrorMsg.setAttribute('style', localStorage.getItem('phoneErrorStyles'));
+        localStorage.setItem('phoneIconSrc', 'images/danger-icon.svg');
+        phoneIcon.src = localStorage.getItem('phoneIconSrc');
+        localStorage.setItem('phoneIconStyles', 'phone-icon-danger');
+        phoneIcon.classList.add(localStorage.getItem('phoneIconStyles'));
     }
   
     if(phoneNumber.value.length == 0) {
@@ -257,3 +310,9 @@ email.addEventListener("input", function () {
         phoneErrorMsg.setAttribute('style', localStorage.getItem('phoneErrorStyles'));
       }
   });
+
+  //Back button 
+  const backBtn = document.getElementById('back-btn');
+  backBtn.addEventListener('click', ()=> {
+    localStorage.clear();
+  })

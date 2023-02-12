@@ -29,7 +29,7 @@
     margin-bottom: 8px;
 }
 
-.exp-dates input {
+.exp-dates input  {
     box-sizing: border-box;
     width: 371px;
     height: 48px;
@@ -143,10 +143,11 @@ input:focus , textarea:focus {
 
 .back-next {
     margin-left: 150px;
-    margin-bottom:65px;
+    margin-bottom:60px;
+    display: flex;
 }
 
-.back-next :first-child , .back-next :last-child{   
+.back-next :first-child a , .back-next :last-child a{   
     width: 113px;
     height: 48px;
     color:white;
@@ -158,10 +159,15 @@ input:focus , textarea:focus {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
+   
+   
 }
 
 .back-next :first-child{
-    margin-right: 570px;
+    margin-right: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .exp-underline {
@@ -193,4 +199,60 @@ input:focus , textarea:focus {
 
 .position-employer :first-child {
     margin-right: 7px;
+}
+
+.position-employer :first-child::after {
+    content: ' ,';
+}
+
+
+/* Dates */
+
+.dates {
+    display:flex;
+    margin-top: 7px;
+}
+
+.dates div {
+    color:#909090;
+    font-family: 'Helvetica Neue';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+}
+
+.dates :first-child {
+    margin-right: 5px;
+}
+
+.dates :first-child::after {
+    content:  ' -' ;
+}
+
+.experience-description {
+    margin-top: 16px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    width: 662px;
+    height: 66px;
+}
+/* 
+.finish-date :first-child{
+    font-family: 'Helvetica Neue';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #919191;
+
+} */
+
+.photoStyle {
+    position: relative;
+    right: 250px;
 }

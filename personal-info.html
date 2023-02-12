@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/personal-info.css">
-    <title>Document</title>
+    <title>Info</title>
 </head>
 <body>
 <div class="main-container">
@@ -15,7 +15,7 @@
             <div class="left-header">
                 <div>
                     <a href="index.html">
-                        <img class="back-btn" src="images/back.svg" alt="back-button">
+                        <img class="back-btn" src="images/back.svg" alt="back-button" id="back-btn">
                     </a>
                     <h3>პირადი ინფო</h3>
                     <p> 1/3 </p>
@@ -29,12 +29,12 @@
                 <label for="firstName">სახელი</label>
                 <input type="text" id="firstName" placeholder="ანზორ" >
                 <img class="" src="" id="first-name-icon">
-                <img>
                 <p id="first-name-error">მინიუმ 2 ასო,ქართული ასოები</p>
             </div>
                 <div class="last-name">
                     <label for="lastName">გვარი</label>
                     <input type="text" id="lastName" placeholder="მუმლაძე">
+                    <img id="last-name-icon">
                     <p id="last-name-error">მინიუმ 2 ასო,ქართული ასოები</p>
                 </div>
         </div>
@@ -59,12 +59,14 @@
         <div class="left-email">
             <p>ელ.ფოსტა</p>
             <input type="email" id="email" placeholder="gldanelianzori@redberry.ge">
+            <img src="" alt="" id="email-icon">
             <p id="email-error">უნდა მთავრდებოდეს @redberry.ge-ით </p>
         </div>
 
         <div class="left-phone">
             <p>მობილურის ნომერი</p>
             <input type="text" id="phoneNumber" placeholder="+995 551 12 34 56">
+            <img src="" alt="" id="phone-icon">
             <p id="phone-error">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს </p>
         </div>
         <div class="submit">

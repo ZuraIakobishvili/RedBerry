@@ -97,6 +97,7 @@
     color: #2E2E2E;
 }
 
+
 /* Photo uploader styles */
 .left-photo-uploader {
     margin-top: 108px;
@@ -199,6 +200,29 @@
     font-size: 14px;
 }
 
+.email-icon-success {
+    position: relative;
+    left: 766px;
+    bottom: 41px;
+}
+
+.email-danger-icon {
+    position: relative;
+    left: 766px;
+    bottom: 41px;
+}
+
+.phone-icon-success {
+    position: relative;
+    left: 766px;
+    bottom: 41px;
+}
+
+.phone-icon-danger {
+    position: relative;
+    left: 766px;
+    bottom: 41px;
+}
 /* Submit Button */
 
 .submit {
@@ -308,7 +332,7 @@
     width:16.5px ;
     height: 16.5px;
     position:absolute;
-    left: 528px;
+    left: 490px;
     top: 210px;
 }
 
@@ -328,6 +352,33 @@
     font-size: 30px;
 }
 
-#first-name-error{
-    margin-bottom: 450px;
+.last-name-success-icon {
+    width:17px;
+    height: 17px;
+    position:relative;
+    left: 339px;
+    bottom: 44px;
+}
+
+.last-name-danger-icon {
+    width:17px;
+    height: 17px;
+    position:relative;
+    left: 339px;
+    bottom: 44px
+}
+
+.last-name-icon {
+    width: 16.5px;
+    height: 16.5px;
+    background-color: green;
+    position: relative;
+    bottom: 44px;
+    left:343px;
+    border-radius: 50%;
+
+}
+
+.last-name-icon-hidden {
+    visibility: hidden;
 }
