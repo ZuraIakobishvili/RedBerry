@@ -202,28 +202,35 @@
 
 .email-icon-success {
     position: relative;
-    left: 766px;
-    bottom: 41px;
+    right: 35px;
+    top: 5px;
 }
 
 .email-danger-icon {
     position: relative;
-    left: 766px;
-    bottom: 41px;
+    width: 18px;
+    height: 18px;
+    left:5px
+
+    
 }
 
 .phone-icon-success {
     position: relative;
-    left: 766px;
-    bottom: 41px;
+    right: 35px;
+    top: 5px;
+
+   
 }
 
 .phone-icon-danger {
     position: relative;
-    left: 766px;
-    bottom: 41px;
+    width: 18px;
+    height: 18px;
+    left: 5px;
+    
 }
-/* Submit Button */
+/* ? Submit Button */
 
 .submit {
     background: #6B40E3;
@@ -238,6 +245,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .submit a {
@@ -332,7 +340,7 @@
     width:16.5px ;
     height: 16.5px;
     position:absolute;
-    left: 490px;
+    left: 530px;
     top: 210px;
 }
 
@@ -364,20 +372,10 @@
     width:17px;
     height: 17px;
     position:relative;
-    left: 339px;
+    left: 381px;
     bottom: 44px
 }
 
-.last-name-icon {
-    width: 16.5px;
-    height: 16.5px;
-    background-color: green;
-    position: relative;
-    bottom: 44px;
-    left:343px;
-    border-radius: 50%;
-
-}
 
 .last-name-icon-hidden {
     visibility: hidden;

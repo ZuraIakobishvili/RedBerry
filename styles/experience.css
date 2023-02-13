@@ -256,3 +256,53 @@ input:focus , textarea:focus {
     position: relative;
     right: 250px;
 }
+
+.position-style-success {
+    color:#98E37E;
+}
+
+.position-style-danger {
+    color:#EF5050;
+}
+
+.position-icon-success {
+    position:relative;
+    right: 30px;
+    top:5px;
+}
+
+.position-icon-danger {
+    position:relative;
+    width: 18px;
+    height: 18px;
+    left:5px;
+}
+
+.position-icon-hidden {
+    display: none;
+}
+
+.employer-style-success {
+    color:#98E37E;
+}
+
+.employer-style-danger {
+    color:#EF5050;
+}
+
+.employer-icon-success {
+    position:relative;
+    right: 30px;
+    top:5px;
+}
+
+.employer-icon-danger {
+    position:relative;
+    width: 18px;
+    height: 18px;
+    left:5px;
+}
+
+.employer-icon-hidden {
+    display: none;
+}

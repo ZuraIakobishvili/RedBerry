@@ -26,30 +26,35 @@
             <div id="experience-parent">
             <div class="left-position">
                 <p>თანამდებობა</p>
-                <input type="text" id="position" placeholder="დეველოპერი, დიზაინერი, ა.შ.    ">
-                <p>მინიმუმ 2 სიმბოლო </p>
+                <input type="text" id="position" placeholder="დეველოპერი, დიზაინერი, ა.შ.">
+                <img id="position-icon">
+                <p id="position-error-message">მინიმუმ 2 სიმბოლო </p>
             </div>
             <div class="left-employer">
                 <p>დამსაქმებელი</p>
                 <input type="text" id="employer" placeholder="დამსაქმებელი">
-                <p>მინიმუმ 2 სიმბოლო</p>
+                <img id="employer-icon">
+                <p id="employer-error-message">მინიმუმ 2 სიმბოლო</p>
             </div>
                 <!-- dates -->
             <div class="exp-dates">
                 <div class="start-date" id="">
                     <label for="start-date">დაწყების რიცხვი</label>
                     <input type="date" id="start-date" >
+                    <p id="start-date-error"></p>
                 </div>
 
                     <div class="finish-date">
                         <label for="finish-date">დამთავრების რიცხვი</label>
                         <input type="date" id="finish-date" >
+                        <p id="finish-date-error"></p>
                     </div>
             </div>
             <!-- Description -->
             <div class="description">
                 <p>აღწერა</p>
                 <textarea placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"     id="description"></textarea>
+                <p id="description-error"></p>
             </div>
             <div class="bottom-line"></div>
         </div>

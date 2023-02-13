@@ -79,6 +79,10 @@
 .education {
     display:flex;
     margin-top: 15px;
+} 
+
+.education-description {
+    margin-top: 16px;
 }
 
 .photoStyle {

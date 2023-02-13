@@ -115,7 +115,7 @@ firstName.addEventListener("input", function () {
     localStorage.setItem('iconStyles', 'first-name-danger-icon');
     firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError');
     firstNameErrorMsg.setAttribute('style', localStorage.getItem("firstNameErrorStyles"));
-    firstNameIcon.classList.add(localStorage.getItem('iconStyles'))
+    firstNameIcon.classList.add(localStorage.getItem('iconStyles'));
     firstNameIcon.src = localStorage.getItem('icon-src');
     
   }
