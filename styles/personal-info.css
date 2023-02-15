@@ -200,36 +200,39 @@
     font-size: 14px;
 }
 
-.email-icon-success {
-    position: relative;
-    right: 35px;
-    top: 5px;
-}
-
-.email-danger-icon {
-    position: relative;
+.email-success {
     width: 18px;
-    height: 18px;
-    left:5px
-
-    
+    position: absolute;
+    left:921px;
+    top:625px;
+    display: none;
 }
 
-.phone-icon-success {
-    position: relative;
-    right: 35px;
-    top: 5px;
-
-   
-}
-
-.phone-icon-danger {
-    position: relative;
+.email-danger {
     width: 18px;
-    height: 18px;
-    left: 5px;
-    
+    position: absolute;
+    left:953px;
+    top:625px;
+    display: none;
 }
+
+.phone-success {
+    width: 18px;
+    position: absolute;
+    left:921px;
+    top:759px;
+    display: none;
+}
+
+.phone-danger {
+    width: 18px;
+    position: absolute;
+    left:953px;
+    top:759px;
+    display: none;
+}
+
+
 /* ? Submit Button */
 
 .submit {
@@ -274,16 +277,50 @@
 
 .first-name-value ,.last-name-value{ 
     color:#F93B1D;
-    width: 123px;
-    height: 42px;
     font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: 700;
     font-size: 34px;
 }
 
+.first-name-value {
+    margin-right: 20px;
+}
+
 .right-email , .right-phone {
     display: flex;
+}
+
+.firstname-success {
+    width: 18px;
+    position: absolute;
+    left:489px;
+    top:209px;
+    display:none;
+}
+
+.firstname-danger {
+    width: 18px;
+    position: absolute;
+    left:526px;
+    top:209px;
+    display:none;
+}
+
+.lastname-success {
+    width: 18px;
+    position: absolute;
+    left:917px;
+    top:209px;
+    display:none;
+}
+
+.lastname-danger {
+    width: 18px;
+    position: absolute;
+    left:952px;
+    top:209px;
+    display:none;
 }
 
 .right-email :nth-child(2) , .right-phone :nth-child(2){

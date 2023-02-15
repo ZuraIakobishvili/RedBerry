@@ -14,6 +14,7 @@ const photoValue = document.getElementById('photoValue');
 
 
 
+
 // Save data to localStorage and display it in input field
 
 function insertData (inputName, insertPlaceName, storageName) {   
@@ -71,244 +72,184 @@ photoValue.appendChild(img);
 
 
 // Validation
-
+var error = [];
 const pattern = /^[ა-ჰ]+$/;
-//First Name Validation
-const firstNameErrorMsg = document.getElementById('first-name-error')
-const firstNameIcon = document.getElementById('first-name-icon');
+//! First Name Validation
 
-if (localStorage.getItem("firstNameStyle")) {
-    firstName.setAttribute("style", localStorage.getItem("firstNameStyle"));
-  }
-if(localStorage.getItem('firstNameErrorStyles')) {
-    firstNameErrorMsg.setAttribute('style',localStorage.getItem('firstNameErrorStyles'))
-  }
-if(localStorage.getItem('firstNameError')) {
-  firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError')
-}
-if(localStorage.getItem('icon-src')) {
-  firstNameIcon.src = localStorage.getItem('icon-src')
-}
-if(localStorage.getItem('iconStyles')) {
-  firstNameIcon.classList.add(localStorage.getItem('iconStyles'))
-}
+const firstNameSuccessIcon = document.getElementById('firstname-icon-success')
+const firstNameDangerIcon = document.getElementById('firstname-icon-danger')
+firstName.setAttribute('style', localStorage.getItem('firstNameStyles'))
+firstNameSuccessIcon.style.display = localStorage.getItem('firstNameSuccessIconVisibile')
+firstNameDangerIcon.style.display = localStorage.getItem('firstNameDangerIconVisibile')
 
-firstName.addEventListener("input", function () {
-  if (firstName.value.match(pattern) && firstName.value.length > 2) {
-    firstName.setAttribute("style", "border: 1px solid #98E37E;");
-    localStorage.setItem("firstNameStyle","border: 1px solid #98E37E;");
-    localStorage.setItem('firstNameError', 'Your first name is correct');
-    localStorage.setItem("firstNameErrorStyles","color:#98E37E;");
-    firstNameErrorMsg.setAttribute('style', localStorage.getItem("firstNameErrorStyles"));
-    localStorage.setItem('iconStyles', 'first-name-success-icon');
-    localStorage.setItem('icon-src', 'images/success-icon.svg');
-    firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError');
-    firstNameIcon.classList.add(localStorage.getItem('iconStyles'));
-    firstNameIcon.src = localStorage.getItem('icon-src');
 
-  } else {
-    firstName.setAttribute("style", "border: 1px solid #EF5050;");
-    localStorage.setItem("firstNameStyle","border: 1px solid #EF5050;");
-    localStorage.setItem("firstNameError","Enter correct info");
-    localStorage.setItem("firstNameErrorStyles","color:#EF5050;");
-    localStorage.setItem('icon-src', 'images/danger-icon.svg');
-    localStorage.setItem('iconStyles', 'first-name-danger-icon');
-    firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError');
-    firstNameErrorMsg.setAttribute('style', localStorage.getItem("firstNameErrorStyles"));
-    firstNameIcon.classList.add(localStorage.getItem('iconStyles'));
-    firstNameIcon.src = localStorage.getItem('icon-src');
-    
-  }
+firstName.addEventListener('input', ()=>{
+    if(firstName.value.length > 2 && firstName.value.match(pattern)) {
+      //! Border
+      localStorage.setItem('firstNameStyles', 'border: 1px solid #98E37E')
+      firstName.setAttribute('style', localStorage.getItem('firstNameStyles'))
+      //!Icons
+      localStorage.setItem('firstNameSuccessIconVisibile', 'block')
+      localStorage.setItem('firstNameDangerIconVisibile', 'none')
+      firstNameSuccessIcon.style.display = localStorage.getItem('firstNameSuccessIconVisibile')
+      firstNameDangerIcon.style.display = localStorage.getItem('firstNameDangerIconVisibile')
+      error.length = 0
+    } else if(firstName.value.length <3  || !firstName.value.match(pattern)){
+      //! Border
+      localStorage.setItem('firstNameStyles', 'border: 1px solid #EF5050;')
+      firstName.setAttribute('style', localStorage.getItem('firstNameStyles'))
+      //! Icons
+      localStorage.setItem('firstNameSuccessIconVisibile', 'none')
+      localStorage.setItem('firstNameDangerIconVisibile', 'block')
+      firstNameSuccessIcon.style.display = localStorage.getItem('firstNameSuccessIconVisibile')
+      firstNameDangerIcon.style.display = localStorage.getItem('firstNameDangerIconVisibile')
+      error.push('მხოლოდ ქართული სიმბოლოები')
+    } 
 
     if(firstName.value.length == 0) {
-        firstName.setAttribute("style", "border: 1px solid #BCBCBC;");
-        localStorage.setItem("firstNameStyle","border: 1px solid #BCBCBC;");
-        localStorage.setItem('firstNameError', 'მინიუმ 2 ასო,ქართული ასოები');
-        localStorage.setItem("firstNameErrorStyles","color:#BCBCBC;position:relative;bottom:323px");
-        localStorage.setItem('iconStyles', 'first-name-hidden-icon');
-        firstNameErrorMsg.innerHTML = localStorage.getItem('firstNameError');
-        firstNameErrorMsg.setAttribute('style',localStorage.getItem('firstNameErrorStyles'));
-        firstNameIcon.classList.add(localStorage.getItem('iconStyles'));
+      //! Border
+      localStorage.setItem('firstNameStyles','border: 1px solid #BCBCBC;')
+      firstName.setAttribute('style', localStorage.getItem('firstNameStyles'))
+      //! Icons
+      localStorage.setItem('firstNameSuccessIconVisibile', 'none')
+      localStorage.setItem('firstNameDangerIconVisibile', 'none')
+      firstNameSuccessIcon.style.display = localStorage.getItem('firstNameSuccessIconVisibile')
+      firstNameDangerIcon.style.display = localStorage.getItem('firstNameDangerIconVisibile')
+      error.push('სახელი უნდა შედგებოდეს მინიმუმ 2 ასოსგან')
     }
-
 });
-//Last Name Validation
-const lastNameErrorMsg = document.getElementById('last-name-error');
-const lastNameIcon = document.getElementById('last-name-icon')
 
-if (localStorage.getItem("lastNameStyles")) {
-    lastName.setAttribute("style", localStorage.getItem("lastNameStyles"));
+//!Last Name Validation
+const lastNameSuccessIcon = document.getElementById('lastname-icon-success')
+const lastNameDangerIcon = document.getElementById('lastname-icon-danger')
+lastName.setAttribute('style', localStorage.getItem('lastNameStyles'))
+lastNameSuccessIcon.style.display = localStorage.getItem('lastNameSuccessIconVisibile')
+lastNameDangerIcon.style.display = localStorage.getItem('lastNameDangerIconVisibile')
+
+lastName.addEventListener('input', ()=> {
+  if(lastName.value.length > 2 && lastName.value.match(pattern)) {
+    //! Border
+    localStorage.setItem('lastNameStyles', 'border: 1px solid #98E37E')
+    lastName.setAttribute('style', localStorage.getItem('lastNameStyles'))
+    //! Icons
+    localStorage.setItem('lastNameSuccessIconVisibile', 'block')
+    localStorage.setItem('lastNameDangerIconVisibile', 'none')
+    lastNameSuccessIcon.style.display = localStorage.getItem('lastNameSuccessIconVisibile')
+    lastNameDangerIcon.style.display = localStorage.getItem('lastNameDangerIconVisibile')
+    error.length = 0
+  } else if(lastName.value.length <3  || !lastName.value.match(pattern)){
+    //! Border
+    localStorage.setItem('lastNameStyles', 'border: 1px solid #EF5050;')
+    lastName.setAttribute('style', localStorage.getItem('lastNameStyles'))
+    //! Icons
+    localStorage.setItem('lastNameSuccessIconVisibile', 'none')
+    localStorage.setItem('lastNameDangerIconVisibile', 'block')
+    lastNameSuccessIcon.style.display = localStorage.getItem('lastNameSuccessIconVisibile')
+    lastNameDangerIcon.style.display = localStorage.getItem('lastNameDangerIconVisibile')
+    error.push('მხოლოდ ქართული სიმბოლოები')
+  } 
+
+  if(lastName.value.length == 0) {
+    //! Border
+    localStorage.setItem('lastNameStyles','border: 1px solid #BCBCBC;')
+    lastName.setAttribute('style', localStorage.getItem('lastNameStyles'))
+    //! Icons
+    localStorage.setItem('lastNameSuccessIconVisibile', 'none')
+    localStorage.setItem('lastNameDangerIconVisibile', 'none')
+    lastNameSuccessIcon.style.display = localStorage.getItem('lastNameSuccessIconVisibile')
+    lastNameDangerIcon.style.display = localStorage.getItem('lastNameDangerIconVisibile')
+    error.push('გვარი უნდა შედგებოდეს მინიმუმ 2 ასოსგან')
   }
-if(localStorage.getItem('lastNameErrorMsg')) {
-    lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg');
-  }
-if(localStorage.getItem('lastNameErrorStyles')) {
-  lastNameErrorMsg.setAttribute('style', localStorage.getItem('lastNameErrorStyles'));
-}
-if(localStorage.getItem('lastname-src')) {
-  lastNameIcon.src = localStorage.getItem('lastname-src');
-}
-if(localStorage.getItem('lastNameIconStyles')) {
-  lastNameIcon.classList.add(localStorage.getItem('lastNameIconStyles'));
-}
-
-
-lastName.addEventListener("input", function () {
-    if (lastName.value.match(pattern) && lastName.value.length > 2) {
-      lastName.setAttribute("style", "border: 1px solid #98E37E;");
-      localStorage.setItem("lastNameStyles","border: 1px solid #98E37E;");
-      localStorage.setItem('lastNameErrorMsg', 'Your last name is correct');
-      localStorage.setItem('lastNameErrorStyles','color:#98E37E;position:relative;bottom:20px;');
-      localStorage.setItem('lastname-src', 'images/success-icon.svg')
-      localStorage.setItem('lastNameIconStyles', 'last-name-success-icon');
-      lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg');
-      lastNameErrorMsg.setAttribute('style', localStorage.getItem('lastNameErrorStyles'));   
-      lastNameIcon.classList.add(localStorage.getItem('lastNameIconStyles'));
-      lastNameIcon.src = localStorage.getItem('lastname-src');
-      
-      
-     
-
-    } else {
-        lastName.setAttribute("style", "border: 1px solid #EF5050;");
-        localStorage.setItem("lastNameStyles","border: 1px solid #EF5050;");
-        localStorage.setItem("lastNameErrorMsg","Enter correct info");
-        localStorage.setItem("lastNameErrorStyles","color:#EF5050;position:relative;bottom:15px");
-        localStorage.setItem('lastname-src', 'images/danger-icon.svg');
-        localStorage.setItem('lastNameIconStyles', 'last-name-danger-icon');
-        lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg')
-        lastNameErrorMsg.setAttribute('style', localStorage.getItem("lastNameErrorStyles"));
-        lastNameIcon.classList.add(localStorage.getItem('lastNameIconStyles'));
-        lastNameIcon.src = localStorage.getItem('lastname-src');
-    }
-  
-    if(lastName.value.length == 0) {
-        lastName.setAttribute("style", "border: 1px solid #BCBCBC;");
-        localStorage.setItem("lastNameStyles","border: 1px solid #BCBCBC;");
-        localStorage.setItem('lastNameErrorMsg', 'მინიუმ 2 ასო,ქართული ასოები');
-        localStorage.setItem('lastNameErrorStyles', 'color:#2E2E2E;position:relative;bottom:330px;');
-        lastNameErrorMsg.innerHTML = localStorage.getItem('lastNameErrorMsg');
-        lastNameErrorMsg.setAttribute('style', localStorage.getItem('lastNameErrorStyles'));
-        localStorage.setItem('lastNameIconStyles', 'last-name-icon-hidden');
-        lastNameErrorMsg.classList.add(localStorage.getItem('lastNameIconStyles'));
-      }
   });
 
 
-  //Email Validation
-  const emailPattern = /^[A-Za-z0-9._%+-]+@redberry.ge$/ ;
-  const emailErrorMsg = document.getElementById('email-error')
-  const emailIcon = document.getElementById('email-icon')
+  //!Email Validation
 
-if (localStorage.getItem("emailStyles")) {
-    email.setAttribute("style", localStorage.getItem("emailStyles"));
+const emailPattern = /^[A-Za-z0-9._%+-]+@redberry.ge$/ ;
+const emailSuccessIcon = document.getElementById('email-icon-success')
+const emailDangerIcon = document.getElementById('email-icon-danger')
+email.setAttribute('style', localStorage.getItem('emailStyles'))
+emailSuccessIcon.style.display = localStorage.getItem('emailSuccessIconVisibility')
+emailDangerIcon.style.display = localStorage.getItem('emailDangerIconVisibility')
+
+
+email.addEventListener('input', ()=> {
+  if(email.value.match(emailPattern)) {
+    //! Border
+    localStorage.setItem('emailStyles', 'border: 1px solid #98E37E')
+    email.setAttribute('style', localStorage.getItem('emailStyles'))
+    //! Icons 
+    localStorage.setItem('emailSuccessIconVisibility', 'block')
+    localStorage.setItem('emailDangerIconVisibility', 'none')
+    emailSuccessIcon.style.display = localStorage.getItem('emailSuccessIconVisibility')
+    emailDangerIcon.style.display = localStorage.getItem('emailDangerIconVisibility')
+  } else if(!email.value.match(emailPattern)) {
+    //! Border
+    localStorage.setItem('emailStyles', 'border: 1px solid #EF5050')
+    email.setAttribute('style', localStorage.getItem('emailStyles'))
+    //! Icons
+    localStorage.setItem('emailSuccessIconVisibility', 'none')
+    localStorage.setItem('emailDangerIconVisibility', 'block')
+    emailSuccessIcon.style.display = localStorage.getItem('emailSuccessIconVisibility')
+    emailDangerIcon.style.display = localStorage.getItem('emailDangerIconVisibility')
+    error.push('შეიყვანეთ სწორი ელექტრონული მისამართი')
   }
-if(localStorage.getItem('emailErrorMsg')) {
-  emailErrorMsg.innerHTML = localStorage.getItem('emailErrorMsg')
-  }
-if(localStorage.getItem('emailErrorStyles')) {
-  emailErrorMsg.setAttribute('style', localStorage.getItem('emailErrorStyles'))
-  }
-if(localStorage.getItem('emailIconSrc')) {
-  emailIcon.src = localStorage.getItem('emailIconSrc')
-}
-if(localStorage.getItem('emailIconStyles')){
-  emailIcon.classList.add(localStorage.getItem('emailIconStyles'))
-}
 
-email.addEventListener("input", function () {
-    if (email.value.match(emailPattern) && email.value.length !== 0) {
-      email.setAttribute("style", "border: 1px solid #98E37E;");
-      localStorage.setItem("emailStyles","border: 1px solid #98E37E;");
-      localStorage.setItem('emailErrorMsg', 'Your email is correct');
-      localStorage.setItem('emailErrorStyles', 'color:#98E37E')
-      emailErrorMsg.innerHTML = localStorage.getItem('emailErrorMsg');
-      emailErrorMsg.setAttribute('style', localStorage.getItem('emailErrorStyles'));
-      localStorage.setItem('emailIconSrc', 'images/success-icon.svg')
-      emailIcon.src = localStorage.getItem('emailIconSrc')
-      localStorage.setItem('emailIconStyles', 'email-icon-success')
-      emailIcon.classList.add(localStorage.getItem('emailIconStyles'))
-      
-      
-
-    } else {
-        email.setAttribute("style", "border: 1px solid #EF5050;");
-        localStorage.setItem("emailStyles","border: 1px solid #EF5050;");
-        localStorage.setItem('emailErrorMsg', 'Enter correct email');
-        localStorage.setItem('emailErrorStyles', 'color:#EF5050' );
-        emailErrorMsg.innerHTML = localStorage.getItem('emailErrorMsg');
-        emailErrorMsg.setAttribute('style', localStorage.getItem('emailErrorStyles'));
-        localStorage.setItem('emailIconSrc', 'images/danger-icon.svg');
-        emailIcon.src = localStorage.getItem('emailIconSrc');
-        localStorage.setItem('emailIconStyles', 'email-danger-icon');
-        emailIcon.classList.add(localStorage.getItem('emailIconStyles'))
-
-    }
-  
-    if(email.value.length == 0) {
-        email.setAttribute("style", "border: 1px solid #BCBCBC;");
-        localStorage.setItem("emailStyles","border: 1px solid #BCBCBC;");
-        localStorage.setItem('emailErrorMsg', 'უნდა მთავრდებოდეს @redberry.ge-ით ')
-        localStorage.setItem('emailErrorStyles', 'color:#2E2E2E');
-        emailErrorMsg.innerHTML = localStorage.getItem('emailErrorMsg');
-        emailErrorMsg.setAttribute('style',localStorage.getItem('emailErrorStyles'))
-      }
+   if(email.value.length == 0) {
+    //! Border
+    localStorage.setItem('emailStyles', 'border: 1px solid #BCBCBC')
+    email.setAttribute('style', localStorage.getItem('emailStyles'))
+    //! Icons 
+    localStorage.setItem('emailSuccessIconVisibility', 'none')
+    localStorage.setItem('emailDangerIconVisibility', 'none')
+    emailSuccessIcon.style.display = localStorage.getItem('emailSuccessIconVisibility')
+    emailDangerIcon.style.display = localStorage.getItem('emailDangerIconVisibility')
+    error.push('სავალდებულო ველი')
+   }
+    
   });
 
-  //Phone number validation
-  const geoNumberPattern = /^\+995\d{9}$/
-  const phoneErrorMsg = document.getElementById('phone-error')
-  const phoneIcon = document.getElementById('phone-icon')
-  if (localStorage.getItem("phoneStyles")) {
-    phoneNumber.setAttribute("style", localStorage.getItem("phoneStyles"));
-  }
-  if(localStorage.getItem('phoneErrorMsg')) {
-    phoneErrorMsg.innerHTML = localStorage.getItem('phoneErrorMsg')
-  }
-  if(localStorage.getItem('phoneErrorStyles')) {
-    phoneErrorMsg.setAttribute('style', localStorage.getItem('phoneErrorStyles'))
-  }
-  if(localStorage.getItem('phoneIconSrc')) {
-    phoneIcon.src = localStorage.getItem('phoneIconSrc')
-  }
-  if(localStorage.getItem('phoneIconStyles')) {
-    phoneIcon.classList.add(localStorage.getItem('phoneIconStyles'))
-  }
+//Phone number validation
+const geoNumberPattern = /^\+995\d{9}$/
+const phoneSuccessIcon = document.getElementById('phone-icon-success')
+const phoneDangerIcon = document.getElementById('phone-icon-danger')
+phoneNumber.setAttribute('style', localStorage.getItem('phoneStyles'))
+phoneSuccessIcon.style.display = localStorage.getItem('phoneSuccessIconVisibility')
+phoneDangerIcon.style.display = localStorage.getItem('phoneDangerIconVisibility')
 
-  phoneNumber.addEventListener("input", function () {
+  phoneNumber.addEventListener('input', ()=> {
     if (phoneNumber.value.match(geoNumberPattern)) {
-      phoneNumber.setAttribute("style", "border: 1px solid #98E37E;");
-      localStorage.setItem("phoneStyles","border: 1px solid #98E37E;");
-      localStorage.setItem('phoneErrorMsg', 'Your phone number is correct');
-      localStorage.setItem('phoneErrorStyles', 'color:#98E37E');
-      phoneErrorMsg.innerHTML = localStorage.getItem('phoneErrorMsg');
-      phoneErrorMsg.setAttribute('style', localStorage.getItem('phoneErrorStyles'));
-      localStorage.setItem('phoneIconSrc', 'images/success-icon.svg');
-      phoneIcon.src = localStorage.getItem('phoneIconSrc');
-      localStorage.setItem('phoneIconStyles', 'phone-icon-success');
-      phoneIcon.classList.add(localStorage.getItem('phoneIconStyles'));
-      
-    } else {
-        phoneNumber.setAttribute("style", "border: 1px solid #EF5050;");
-        localStorage.setItem("phoneStyles","border: 1px solid #EF5050;");
-        localStorage.setItem('phoneErrorMsg', 'Enter correct phone number');
-        localStorage.setItem('phoneErrorStyles', 'color:#EF5050');
-        phoneErrorMsg.innerHTML = localStorage.getItem('phoneErrorMsg');
-        phoneErrorMsg.setAttribute('style', localStorage.getItem('phoneErrorStyles'));
-        localStorage.setItem('phoneIconSrc', 'images/danger-icon.svg');
-        phoneIcon.src = localStorage.getItem('phoneIconSrc');
-        localStorage.setItem('phoneIconStyles', 'phone-icon-danger');
-        phoneIcon.classList.add(localStorage.getItem('phoneIconStyles'));
+      //! Border 
+      localStorage.setItem('phoneStyles', 'border: 1px solid #98E37E')
+      phoneNumber.setAttribute('style', localStorage.getItem('phoneStyles'))
+      //! Icons
+      localStorage.setItem('phoneSuccessIconVisibility', 'block')
+      localStorage.setItem('phoneDangerIconVisibility', 'none')
+      phoneSuccessIcon.style.display = localStorage.getItem('phoneSuccessIconVisibility')
+      phoneDangerIcon.style.display = localStorage.getItem('phoneDangerIconVisibility')
+    } else if(!phoneNumber.value.match(geoNumberPattern)) {
+      //!Border
+      localStorage.setItem('phoneStyles', 'border: 1px solid #EF5050')
+      phoneNumber.setAttribute('style', localStorage.getItem('phoneStyles'))
+      //! Icons
+      localStorage.setItem('phoneSuccessIconVisibility', 'none')
+      localStorage.setItem('phoneDangerIconVisibility', 'block')
+      phoneSuccessIcon.style.display = localStorage.getItem('phoneSuccessIconVisibility')
+      phoneDangerIcon.style.display = localStorage.getItem('phoneDangerIconVisibility')
+      error.push('უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს')
     }
-  
+
     if(phoneNumber.value.length == 0) {
-        phoneNumber.setAttribute("style", "border: 1px solid #BCBCBC;");
-        localStorage.setItem("phoneStyles","border: 1px solid #BCBCBC;");
-        localStorage.setItem('phoneErrorMsg', 'უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს');
-        localStorage.setItem('phoneErrorStyles', 'color:#2E2E2E');
-        phoneErrorMsg.innerHTML = localStorage.getItem('phoneErrorMsg');
-        phoneErrorMsg.setAttribute('style', localStorage.getItem('phoneErrorStyles'));
-      }
+      //! Border
+      localStorage.setItem('phoneStyles', 'border: 1px solid #BCBCBC')
+      phoneNumber.setAttribute('style', localStorage.getItem('phoneStyles'))
+      //! Icons 
+      localStorage.setItem('phoneSuccessIconVisibility', 'none')
+      localStorage.setItem('phoneDangerIconVisibility', 'none')
+      phoneSuccessIcon.style.display = localStorage.getItem('phoneSuccessIconVisibility')
+      phoneDangerIcon.style.display = localStorage.getItem('phoneDangerIconVisibility')
+    }
+
   });
 
   //Back button 
