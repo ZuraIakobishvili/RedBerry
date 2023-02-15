@@ -241,68 +241,47 @@ input:focus , textarea:focus {
     width: 662px;
     height: 66px;
 }
-/* 
-.finish-date :first-child{
-    font-family: 'Helvetica Neue';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #919191;
-
-} */
 
 .photoStyle {
     position: relative;
     right: 250px;
 }
 
-.position-style-success {
-    color:#98E37E;
-}
 
-.position-style-danger {
-    color:#EF5050;
-}
 
-.position-icon-success {
-    position:relative;
-    right: 30px;
-    top:5px;
-}
 
-.position-icon-danger {
-    position:relative;
+
+
+/* ! Icons */
+
+.position-success {
     width: 18px;
-    height: 18px;
-    left:5px;
-}
-
-.position-icon-hidden {
+    position: absolute;
+    left:921px;
+    top:166px;
     display: none;
 }
 
-.employer-style-success {
-    color:#98E37E;
-}
-
-.employer-style-danger {
-    color:#EF5050;
-}
-
-.employer-icon-success {
-    position:relative;
-    right: 30px;
-    top:5px;
-}
-
-.employer-icon-danger {
-    position:relative;
+.position-danger {
     width: 18px;
-    height: 18px;
-    left:5px;
+    position: absolute;
+    left:953px;
+    top:166px;
+    display: none;
 }
 
-.employer-icon-hidden {
-    display: none;
+.employer-success {
+    width: 18px;
+    position: absolute;
+    left:921px;
+    top:300px;
+   display: none;
+}
+
+.employer-danger {
+    width: 18px;
+    position: absolute;
+    left:953px;
+    top:300px;
+   display: none;
 }

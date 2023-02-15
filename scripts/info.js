@@ -163,7 +163,7 @@ lastName.addEventListener('input', ()=> {
   });
 
 
-  //!Email Validation
+//!Email Validation
 
 const emailPattern = /^[A-Za-z0-9._%+-]+@redberry.ge$/ ;
 const emailSuccessIcon = document.getElementById('email-icon-success')
@@ -209,7 +209,7 @@ email.addEventListener('input', ()=> {
     
   });
 
-//Phone number validation
+//! Phone number validation
 const geoNumberPattern = /^\+995\d{9}$/
 const phoneSuccessIcon = document.getElementById('phone-icon-success')
 const phoneDangerIcon = document.getElementById('phone-icon-danger')

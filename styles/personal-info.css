@@ -364,32 +364,13 @@
     font-size: 16px
 }
 
-.first-name-success-icon  {
-    width:16.5px ;
-    height: 16.5px;
-    position:absolute;
-    left: 490px;
-    top: 210px;
-
-}
-
-.first-name-danger-icon  {
-    width:16.5px ;
-    height: 16.5px;
-    position:absolute;
-    left: 530px;
-    top: 210px;
-}
-
-.first-name-hidden-icon {
-    visibility: hidden;
-}
 
 .show-photo img {
     width: 246px;
     height: 246px;
     margin-top: 48px;
     border-radius: 50%;
+    position: absolute;
 }
 
 
@@ -397,23 +378,3 @@
     font-size: 30px;
 }
 
-.last-name-success-icon {
-    width:17px;
-    height: 17px;
-    position:relative;
-    left: 339px;
-    bottom: 44px;
-}
-
-.last-name-danger-icon {
-    width:17px;
-    height: 17px;
-    position:relative;
-    left: 381px;
-    bottom: 44px
-}
-
-
-.last-name-icon-hidden {
-    visibility: hidden;
-}
