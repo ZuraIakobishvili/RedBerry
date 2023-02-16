@@ -110,3 +110,47 @@ description.addEventListener('input', ()=> {
     educationDescriptionValue.innerHTML = localStorage.getItem('educationDescription')
 });
 
+
+//! Validation 
+var error = [];
+const academySuccessIcon = document.getElementById('academy-success-icon')
+const academyDangerIcon = document.getElementById('academy-danger-icon')
+academy.setAttribute('style', localStorage.getItem('academyStyle'))
+academySuccessIcon.style.display = localStorage.getItem('academySuccessIconStyles')
+academyDangerIcon.style.display = localStorage.getItem('academyDangerIconStyles')
+
+
+academy.addEventListener('input', ()=> {
+    if(academy.value.length > 2) {
+        //! Border
+        localStorage.setItem('academyStyle', 'border: 1px solid #98E37E;')
+        academy.setAttribute('style', localStorage.getItem('academyStyle'))
+        //! Icons
+        localStorage.setItem('academySuccessIconStyles', 'block')
+        localStorage.setItem('academyDangerIconStyles', 'none')
+        academySuccessIcon.style.display = localStorage.getItem('academySuccessIconStyles')
+        academyDangerIcon.style.display = localStorage.getItem('academyDangerIconStyles')
+
+    } else if(academy.value.length < 3) {
+        //! Border
+        localStorage.setItem('academyStyle', 'border: 1px solid #EF5050;')
+        academy.setAttribute('style', localStorage.getItem('academyStyle'))
+        //! Icons
+        localStorage.setItem('academySuccessIconStyles', 'none')
+        localStorage.setItem('academyDangerIconStyles', 'block')
+        academySuccessIcon.style.display = localStorage.getItem('academySuccessIconStyles')
+        academyDangerIcon.style.display = localStorage.getItem('academyDangerIconStyles')
+    }
+
+    if(academy.value.length == 0) {
+        //! Border
+        localStorage.setItem('academyStyle', 'border: 1px solid #BCBCBC;')
+        academy.setAttribute('style', localStorage.getItem('academyStyle'))
+        //! Icons
+        localStorage.setItem('academySuccessIconStyles', 'none')
+        localStorage.setItem('academyDangerIconStyles', 'none')
+        academySuccessIcon.style.display = localStorage.getItem('academySuccessIconStyles')
+        academyDangerIcon.style.display = localStorage.getItem('academyDangerIconStyles')
+
+    }
+});

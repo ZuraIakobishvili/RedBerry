@@ -89,3 +89,20 @@
     position: relative;
     right: 250px;
 }
+
+
+.academy-success {
+    width: 18px;
+    position: absolute;
+    left:921px;
+    top:167px;
+    display: none;
+}
+
+.academy-danger {
+    width: 18px;
+    position: absolute;
+    left:953px;
+    top:167px;
+    display: none;
+}
