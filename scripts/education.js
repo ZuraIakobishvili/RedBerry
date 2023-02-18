@@ -119,7 +119,7 @@ academy.setAttribute('style', localStorage.getItem('academyStyle'))
 academySuccessIcon.style.display = localStorage.getItem('academySuccessIconStyles')
 academyDangerIcon.style.display = localStorage.getItem('academyDangerIconStyles')
 
-
+//! Academy
 academy.addEventListener('input', ()=> {
     if(academy.value.length > 2) {
         //! Border
@@ -140,6 +140,8 @@ academy.addEventListener('input', ()=> {
         localStorage.setItem('academyDangerIconStyles', 'block')
         academySuccessIcon.style.display = localStorage.getItem('academySuccessIconStyles')
         academyDangerIcon.style.display = localStorage.getItem('academyDangerIconStyles')
+        error.push('უნდა შეიცავდეს მინიმუმ 2 სიმბოლოს')
+        
     }
 
     if(academy.value.length == 0) {
@@ -151,6 +153,44 @@ academy.addEventListener('input', ()=> {
         localStorage.setItem('academyDangerIconStyles', 'none')
         academySuccessIcon.style.display = localStorage.getItem('academySuccessIconStyles')
         academyDangerIcon.style.display = localStorage.getItem('academyDangerIconStyles')
-
+        error.push('უნდა შეიცავდეს მინიმუმ 2 სიმბოლოს')
     }
 });
+
+//! Degree Validation
+degree.setAttribute('style', localStorage.getItem('degreeStyle'))
+degree.addEventListener('input', ()=> {
+    if(degree.value) {
+        localStorage.setItem('degreeStyle', 'border: 1px solid #98E37E;')
+        degree.setAttribute('style', localStorage.getItem('degreeStyle'))
+    }
+});
+
+
+//! Finish date Validation
+const educationFinishDate = document.getElementById('finish-date')
+educationFinishDate.setAttribute('style', localStorage.getItem('educationStyles'))
+educationFinishDate.addEventListener('input', ()=> {
+    if(educationFinishDate.value) {
+        localStorage.setItem('educationStyles', 'border: 1px solid #98E37E;')
+        educationFinishDate.setAttribute('style', localStorage.getItem('educationStyles'))
+    }
+})
+
+//! Education Description Validation
+description.setAttribute('style', localStorage.getItem('descriptionStyles'))
+description.addEventListener('input', ()=> {
+    if(description.value.length > 2 ){
+        localStorage.setItem('descriptionStyles', 'border: 1px solid #98E37E;')
+        description.setAttribute('style', localStorage.getItem('descriptionStyles'))
+    } else if (description.value.length < 3) {
+        localStorage.setItem('descriptionStyles', 'border: 1px solid #EF5050;')
+        description.setAttribute('style', localStorage.getItem('descriptionStyles'))
+    }
+
+    if(description.value.length == 0) {
+        localStorage.setItem('descriptionStyles', 'border: 1px solid #BCBCBC;')
+        description.setAttribute('style', localStorage.getItem('descriptionStyles'))
+    }
+})
+
