@@ -251,7 +251,7 @@
     
 }
 
-.submit a {
+.submit  {
     font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: 500;
@@ -373,8 +373,4 @@
     position: relative;
 }
 
-
-#photoValue {
-    font-size: 30px;
-}
 

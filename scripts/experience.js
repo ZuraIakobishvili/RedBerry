@@ -125,7 +125,7 @@ positionSuccessIcon.style.display = localStorage.getItem('positionSuccessIcon')
 positionDangerIcon.style.display = localStorage.getItem('positionDangerIcon')
 
 position.addEventListener('input', ()=> {
-    if(position.value.length > 2)  {
+    if(position.value.length >= 2)  {
         //! Border 
         localStorage.setItem('positionStyles', 'border: 1px solid #98E37E;')
         position.setAttribute('style', localStorage.getItem('positionStyles'))
@@ -169,7 +169,7 @@ employerSuccessIcon.style.display = localStorage.getItem('employerSuccessIcon')
 employerDangerIcon.style.display = localStorage.getItem('employerDangerIcon')
 
 employer.addEventListener('input', ()=> {
-    if(employer.value.length > 2)  {
+    if(employer.value.length >= 2)  {
         //! Border 
         localStorage.setItem('employerStyles', 'border: 1px solid #98E37E;')
         employer.setAttribute('style', localStorage.getItem('employerStyles'))
@@ -254,3 +254,45 @@ description.addEventListener('input', ()=> {
 
     }
 });
+
+
+//! Redirect on another page 
+
+const form = document.getElementById('form')
+form.addEventListener('submit', (e)=> {
+  e.preventDefault();
+  if(position.value.length >= 2 && employer.value.length >= 2 && startDate.value.length!== 0 &&  finishDate.value.length !== 0 && description !== 0) {
+    window.location.replace('education.html')
+  } else {
+    //! Position error message 
+    if(position.value.length <2) {
+        const positionError = document.getElementById('position-error-message')
+        positionError.innerHTML = 'შეიყვანეთ სწორი მონაცემები'
+        positionError.style.color = 'red';
+    }   
+    //! Employer error message
+    if(employer.value.length <2) {
+      const employerError = document.getElementById('employer-error-message')
+      employerError.innerHTML = 'შეიყვანეთ სწორი ინფორმაცია'
+      employerError.style.color = 'red'
+    }
+    //! Start Date error message
+    if(!startDate.value) {
+      const startDateError = document.getElementById('start-date-error')
+      startDateError.innerHTML = 'აირჩიეთ რიცხვი'
+      startDateError.style.color = 'red';
+    }
+    //!Finish Date Error Message
+    if(!finishDate.value) {
+        const finishDateError = document.getElementById('finish-date-error')
+        finishDateError.innerHTML = 'აირჩიეთ რიცხვი'
+        finishDateError.style.color = 'red';
+    }
+    //! Description Error Message
+    if(!description.value) {
+        const descriptionError = document.getElementById('description-error')
+        descriptionError.innerHTML = 'შეიყვანეთ სწორი ინფორმაცია'
+        descriptionError.style.color = 'red'
+    }
+}   
+})

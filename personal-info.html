@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="main-container">
+
     <div class="left-container">
         <!-- Header div -->
             <div class="left-header">
@@ -23,7 +24,7 @@
                 <div class="left-underline"></div>
             </div>
         <!-- Name , Last Name div  -->
-        <form>
+        <form id="form">
         <div class="full-name">
             <div class="first-name" id="firstNameParent">
                 <label for="firstName">სახელი</label>
@@ -39,8 +40,7 @@
                     <img class="lastname-danger" src="images/danger-icon.svg" id="lastname-icon-danger">
                     <p id="last-name-error">მინიუმ 2 ასო,ქართული ასოები</p>
                 </div>
-        </div>
-    
+        </div>   
         <!-- File input  -->
         <div class="left-photo-uploader">
             <p>პირადი ფოტოს ატვირთვა</p>
@@ -49,14 +49,11 @@
             ატვირთვა
             </label>
         </div>
-
         <!-- Text area -->
-
         <div class="left-textarea">
             <p>ჩემ შესახებ(არასავალდებულოა)</p>
             <textarea placeholder="ზოგადი ინფო შენ შესახებ" id="textarea"></textarea>
         </div>
-
         <!-- Email && Mobile -->
         <div class="left-email">
             <p>ელ.ფოსტა</p>
@@ -73,12 +70,8 @@
             <img class="phone-danger" src="images/danger-icon.svg" id="phone-icon-danger">
             <p id="phone-error">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს </p>
         </div>
-        <div class="submit">
-            <a href="experience.html">ᲨᲔᲛᲓᲔᲒᲘ</a>
-        </div>
-        
+        <button type="submit" class="submit" id="info-redirect">ᲨᲔᲛᲓᲔᲒᲘ</button>    
     </form>
-    
     </div>
     <!-- Right container -->
     <div class="right-container" id="right-container">
@@ -101,8 +94,6 @@
         <div class="show-photo" id="photoValue"></div>
     </div>
 </div>
-
-        
 
 <script src="scripts/info.js"></script>
 </body>

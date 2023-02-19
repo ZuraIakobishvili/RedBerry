@@ -84,7 +84,7 @@ firstNameDangerIcon.style.display = localStorage.getItem('firstNameDangerIconVis
 
 
 firstName.addEventListener('input', ()=>{
-    if(firstName.value.length > 2 && firstName.value.match(pattern)) {
+    if(firstName.value.length >= 2 && firstName.value.match(pattern)) {
       //! Border
       localStorage.setItem('firstNameStyles', 'border: 1px solid #98E37E')
       firstName.setAttribute('style', localStorage.getItem('firstNameStyles'))
@@ -94,7 +94,7 @@ firstName.addEventListener('input', ()=>{
       firstNameSuccessIcon.style.display = localStorage.getItem('firstNameSuccessIconVisibile')
       firstNameDangerIcon.style.display = localStorage.getItem('firstNameDangerIconVisibile')
       error.length = 0
-    } else if(firstName.value.length <3  || !firstName.value.match(pattern)){
+    } else if(firstName.value.length <2  || !firstName.value.match(pattern)){
       //! Border
       localStorage.setItem('firstNameStyles', 'border: 1px solid #EF5050;')
       firstName.setAttribute('style', localStorage.getItem('firstNameStyles'))
@@ -127,7 +127,7 @@ lastNameSuccessIcon.style.display = localStorage.getItem('lastNameSuccessIconVis
 lastNameDangerIcon.style.display = localStorage.getItem('lastNameDangerIconVisibile')
 
 lastName.addEventListener('input', ()=> {
-  if(lastName.value.length > 2 && lastName.value.match(pattern)) {
+  if(lastName.value.length >= 2 && lastName.value.match(pattern)) {
     //! Border
     localStorage.setItem('lastNameStyles', 'border: 1px solid #98E37E')
     lastName.setAttribute('style', localStorage.getItem('lastNameStyles'))
@@ -257,3 +257,41 @@ phoneDangerIcon.style.display = localStorage.getItem('phoneDangerIconVisibility'
   backBtn.addEventListener('click', ()=> {
     localStorage.clear();
   })
+
+//! Redirect on another page 
+
+const form = document.getElementById('form')
+form.addEventListener('submit', (e)=> {
+  e.preventDefault();
+  if(firstName.value.length >= 2 && firstName.value.match(pattern) && (lastName.value.length >= 2 && lastName.value.match(pattern)) && email.value.match(emailPattern) &&  email.value!== 0 &&  phoneNumber.value.match(geoNumberPattern) && phoneNumber.value !== 0 ) {
+    console.log('success')
+    window.location.replace('experience.html')
+  } else {
+    //! firstname error message 
+ if(firstName.value.length <2 || !firstName.value.match(pattern)){
+    const firstNameError = document.getElementById('first-name-error')
+    firstNameError.innerHTML = 'შეიყვანეთ სწორი მონაცემები'
+    firstNameError.style.color = 'red';
+  }   
+    //! lastname error message
+    if(lastName.value.length <2) {
+      const lastNameError = document.getElementById('last-name-error')
+      lastNameError.innerHTML = 'შეიყვანეთ სწორი ინფორმაცია'
+      lastNameError.style.color = 'red'
+    }
+    //! Email error message
+    if(email.length == 0 || !email.value.match(emailPattern)) {
+      const emailError = document.getElementById('email-error')
+      emailError.innerHTML = 'შეიყვანეთ სწორი ინფორმაცია'
+      emailError.style.color = 'red';
+    }
+    //!Phone Number Error Message
+    if(phoneNumber.value.length == 0 || !phoneNumber.value.match(geoNumberPattern)){
+      const phoneNumberError = document.getElementById('phone-error')
+      phoneNumberError.innerHTML = 'შეიყვანეთ სწორი ინფორმაცია'
+      phoneNumberError.style.color = 'red'
+    }
+  }
+    
+})
+

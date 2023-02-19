@@ -35,7 +35,11 @@
     height: 48px;
     border: 1px solid #BCBCBC;
     border-radius: 4px;
-    margin-bottom: 47px;
+}
+
+.exp-dates p {
+    margin-bottom: 33px;
+    margin-top: 8px;
 }
 
 .exp-dates input {
@@ -147,7 +151,7 @@ input:focus , textarea:focus {
     display: flex;
 }
 
-.back-next :first-child a , .back-next :last-child a{   
+.back-next :first-child a , .back-next :last-child {   
     width: 113px;
     height: 48px;
     color:white;
@@ -241,16 +245,6 @@ input:focus , textarea:focus {
     width: 662px;
     height: 66px;
 }
-
-.photoStyle {
-    position: relative;
-    right: 250px;
-}
-
-
-
-
-
 
 /* ! Icons */
 

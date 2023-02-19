@@ -121,7 +121,7 @@ academyDangerIcon.style.display = localStorage.getItem('academyDangerIconStyles'
 
 //! Academy
 academy.addEventListener('input', ()=> {
-    if(academy.value.length > 2) {
+    if(academy.value.length >= 2) {
         //! Border
         localStorage.setItem('academyStyle', 'border: 1px solid #98E37E;')
         academy.setAttribute('style', localStorage.getItem('academyStyle'))
@@ -180,7 +180,7 @@ educationFinishDate.addEventListener('input', ()=> {
 //! Education Description Validation
 description.setAttribute('style', localStorage.getItem('descriptionStyles'))
 description.addEventListener('input', ()=> {
-    if(description.value.length > 2 ){
+    if(description.value.length >= 2 ){
         localStorage.setItem('descriptionStyles', 'border: 1px solid #98E37E;')
         description.setAttribute('style', localStorage.getItem('descriptionStyles'))
     } else if (description.value.length < 3) {
