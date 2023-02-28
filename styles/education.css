@@ -85,6 +85,10 @@
     margin-top: 16px;
 }
 
+.description {
+    margin-top:34px;
+}
+
 .photoStyle {
     position: relative;
     right: 250px;
